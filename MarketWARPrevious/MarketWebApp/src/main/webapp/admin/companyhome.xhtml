@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <body>
+
+        <ui:composition template="./adminforcompanytemplate.xhtml">
+
+            <ui:define name="content">
+                <h3>Company Home</h3>
+                <br></br><br></br>
+
+                <table>
+                    <tr>
+                        <td>Company Name</td><td><h:outputText id="otCompanyName" value="#{manageCompaniesBean.companyName}" ></h:outputText></td>
+                    </tr>
+                    <tr>
+                        <td>About</td><td><h:outputText id="otAbout" value="#{manageCompaniesBean.companyAbout}"></h:outputText></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td><td><h:outputText id="otCompanyAddress" value="#{manageCompaniesBean.companyAddress}"></h:outputText></td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td><td><h:outputText id="otCompanyPhone" value="#{manageCompaniesBean.companyPhone}" ></h:outputText></td>
+                    </tr>
+                    <tr>
+                        <td>Country</td><td><h:outputText id="otCountry" value="#{manageCompaniesBean.companyCountry}" ></h:outputText></td>
+                    </tr>
+                    <tr>
+                        <td>Pin</td><td><h:outputText id="otPin" value="#{manageCompaniesBean.companyPin}" ></h:outputText></td>
+                    </tr>
+                </table>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

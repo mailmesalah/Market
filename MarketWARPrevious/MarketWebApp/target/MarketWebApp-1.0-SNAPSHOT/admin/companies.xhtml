@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <body>
+
+        <ui:composition template="./admintemplate.xhtml">
+
+            <ui:define name="content">                
+
+                <h2>Companies</h2>
+
+                <br></br><br></br>
+                <h3>New Companies</h3>
+                <f:view>
+                    <h:form>
+                        <h:dataTable value="#{manageCompaniesBean.allUnregisteredCompanies}" var="item">
+                            <h:column>
+                                <f:facet name="header">Company</f:facet>
+                                <h:commandLink id="clNewCompanyLink" value="#{item.companyName}" action="#{manageCompaniesBean.showCompany(item.companyId)}"/>                                                                    
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">About</f:facet>
+                                #{item.about}                                
+                            </h:column>
+                            <h:column>                                
+                                <h:commandButton value="Activate" actionListener="#{manageCompaniesBean.activateCompany(item.companyId)}"></h:commandButton>                                
+                            </h:column>
+                            <h:column>                                
+                                <h:commandButton value="Deactivate" actionListener="#{manageCompaniesBean.deactivateCompany(item.companyId)}"></h:commandButton>                                
+                            </h:column>
+                            <h:column>                                
+                                <h:commandButton value="Remove" actionListener="#{manageCompaniesBean.removeCompany(item.companyId)}"></h:commandButton>                                
+                            </h:column>
+
+                        </h:dataTable>
+                    </h:form>
+                </f:view>
+
+                <br></br><br></br>
+                <h3>Active Companies</h3>
+                <f:view>
+                    <h:form>
+                        <h:dataTable value="#{manageCompaniesBean.allActiveCompanies}" var="item">
+                            <h:column>
+                                <f:facet name="header">Company</f:facet>
+                                <h:commandLink id="clNewCompanyLink" value="#{item.companyName}" action="#{manageCompaniesBean.showCompany(item.companyId)}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">About</f:facet>
+                                #{item.about}                                
+                            </h:column>
+                            <h:column>                                
+                                <h:commandButton value="Deactivate" actionListener="#{manageCompaniesBean.deactivateCompany(item.companyId)}"></h:commandButton>                                
+                            </h:column>
+                            <h:column>                                
+                                <h:commandButton value="Remove" actionListener="#{manageCompaniesBean.removeCompany(item.companyId)}"></h:commandButton>                                
+                            </h:column>
+
+                        </h:dataTable>
+                    </h:form>
+                </f:view>
+
+                <br></br><br></br>
+                <h3>Deactive Companies</h3>
+                <f:view>
+                    <h:form>
+                        <h:dataTable value="#{manageCompaniesBean.allDeactiveCompanies}" var="item">
+                            <h:column>
+                                <f:facet name="header">Company</f:facet>
+                                <h:commandLink id="clNewCompanyLink" value="#{item.companyName}" action="#{manageCompaniesBean.showCompany(item.companyId)}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">About</f:facet>
+                                #{item.about}                                
+                            </h:column>
+                            <h:column>                                
+                                <h:commandButton value="Activate" actionListener="#{manageCompaniesBean.activateCompany(item.companyId)}"></h:commandButton>                                
+                            </h:column>                            
+                            <h:column>                                
+                                <h:commandButton value="Remove" actionListener="#{manageCompaniesBean.removeCompany(item.companyId)}"></h:commandButton>                                
+                            </h:column>
+
+                        </h:dataTable>
+                    </h:form>
+                </f:view>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

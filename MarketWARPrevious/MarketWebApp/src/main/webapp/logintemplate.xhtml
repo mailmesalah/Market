@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>    
+<title>Market</title>
+<meta charset="iso-8859-1"/>
+<link rel="stylesheet" href="styles/layout.css" type="text/css"/>
+
+
+</head>
+<body>
+<div class="wrapper row1">
+  <header id="header" class="clear">
+    <hgroup>
+      <h1><a href="#">Market</a></h1>
+      <h2>where you market sales and services</h2>
+    </hgroup>
+    <div class="clear"></div>
+  </header>
+</div>
+<!-- content -->
+<div class="wrapper row2">
+  <div id="container">
+    <!-- content body -->
+    <aside id="left_column">      
+      <nav>
+        <ul>
+          <li><h2><a href="login.xhtml">Login</a></h2></li>
+          <li><h2><a href="register.xhtml">Register</a></h2></li>
+	  <li><h2><a href="aboutus.xhtml">About Us</a></h2></li>
+        </ul>
+      </nav>     
+    </aside>
+    <!-- main content -->
+    <div id="content">
+        <p><ui:insert name="content"></ui:insert></p>
+    </div>
+    <!-- / content body -->
+    <div class="clear"></div>
+  </div>
+</div>
+<!-- footer -->
+<div class="wrapper row3">
+  <footer id="footer">
+    <p class="fl_left">Copyright &copy; 2013 - All Rights Reserved - <a href="#">Lychee</a></p>
+    <p class="fl_right">Developed by <a href="#" title="Sely Changampally">Sely</a></p>
+    <div class="clear"></div>
+  </footer>
+</div>
+</body>
+</html>

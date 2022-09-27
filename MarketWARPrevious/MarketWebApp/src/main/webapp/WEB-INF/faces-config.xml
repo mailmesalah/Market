@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="2.0"
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+    
+    <navigation-rule>
+        <from-view-id>/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>admin</from-outcome>
+            <redirect>true</redirect>
+            <to-view-id>/admin/home.xhtml</to-view-id>                        
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>manager</from-outcome>
+            <redirect>true</redirect>
+            <to-view-id>/manager/home.xhtml</to-view-id>                        
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>staff</from-outcome>
+            <redirect>true</redirect>
+            <to-view-id>/staff/home.xhtml</to-view-id>                        
+        </navigation-case>        
+    </navigation-rule>    
+    
+    <navigation-rule>
+        <from-view-id>/register.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>register</from-outcome>
+            <redirect>true</redirect>
+            <to-view-id>/register/register.xhtml</to-view-id>                        
+        </navigation-case>
+    </navigation-rule>
+    
+</faces-config>

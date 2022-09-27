@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <body>
+
+        <ui:composition template="./registertemplate.xhtml">
+
+            <ui:define name="content">
+                <h3>Register</h3>
+                <f:view>
+                    <h:form>
+                        <h:outputText id="successmessage" value="#{registerBean.successMessage}" rendered="#{registerBean.applied}"></h:outputText>
+                        <table>
+                            <tr>
+                                <td><h:outputText id="otCompanyName" value="Company Name" rendered="#{registerBean.applied==false}"></h:outputText></td><td><h:inputText id="itCompanyName" value="#{registerBean.companyName}" rendered="#{registerBean.applied==false}" required="true"></h:inputText></td>
+                            </tr>
+                            <tr>
+                                <td><h:outputText id="otAbout" value="About" rendered="#{registerBean.applied==false}"></h:outputText></td><td><h:inputTextarea id="itAbout" rows="5" cols="60" value="#{registerBean.about}" rendered="#{registerBean.applied==false}"></h:inputTextarea></td>
+                            </tr>
+                            <tr>
+                                <td><h:outputText id="otCompanyAddress" value="Address" rendered="#{registerBean.applied==false}"></h:outputText></td><td><h:inputTextarea id="itaCompanyAddress" rows="5" cols="60" value="#{registerBean.companyAddress}" rendered="#{registerBean.applied==false}"></h:inputTextarea></td>
+                            </tr>
+                            <tr>
+                                <td><h:outputText id="otCompanyPhone" value="Phone" rendered="#{registerBean.applied==false}"></h:outputText></td><td><h:inputText id="itCompanyPhone" value="#{registerBean.companyPhone}" rendered="#{registerBean.applied==false}" required="true"></h:inputText></td>
+                            </tr>
+                            <tr>
+                                <td><h:outputText id="otCountry" value="Country" rendered="#{registerBean.applied==false}"></h:outputText></td><td><h:inputText id="itCountry" value="#{registerBean.country}" rendered="#{registerBean.applied==false}"></h:inputText></td>
+                            </tr>
+                            <tr>
+                                <td><h:outputText id="otPin" value="Pin" rendered="#{registerBean.applied==false}"></h:outputText></td><td><h:inputText id="itPinNo" value="#{registerBean.pinNo}" rendered="#{registerBean.applied==false}"></h:inputText></td>
+                            </tr>
+                            <tr><td> </td><td> </td></tr>
+                            <tr><td> </td><td> </td></tr>
+                            <tr>
+                                <td><h:outputText id="otUsername" value="Username" rendered="#{registerBean.applied==false}"></h:outputText></td><td><h:inputText id="itUsername" value="#{registerBean.username}" rendered="#{registerBean.applied==false}" required="true"></h:inputText></td>
+                            </tr>
+                            <tr>
+                                <td><h:outputText id="otPassword" value="Password" rendered="#{registerBean.applied==false}"></h:outputText></td><td><h:inputSecret id="isPassword" value="#{registerBean.password}" rendered="#{registerBean.applied==false}" required="true"></h:inputSecret></td>
+                            </tr>
+                            <tr>
+                                <td><h:outputText id="otConfirmPassword" value="Confirm Password" rendered="#{registerBean.applied==false}"></h:outputText></td><td><h:inputSecret id="isConfirmPassword" value="#{registerBean.confirmPassword}" rendered="#{registerBean.applied==false}" required="true"></h:inputSecret></td>
+                            </tr>
+                            <tr>
+                                <td><h:outputText id="otProfileName" value="Profile Name" rendered="#{registerBean.applied==false}"></h:outputText></td><td><h:inputText id="itProfileName" value="#{registerBean.profileName}" rendered="#{registerBean.applied==false}" required="true"></h:inputText></td>
+                            </tr>
+                            <tr>
+                                <td><h:outputText id="otProfileAddress" value="Address" rendered="#{registerBean.applied==false}"></h:outputText></td><td><h:inputTextarea id="itaProfileAddress" rows="5" cols="60" value="#{registerBean.profileAddress}" rendered="#{registerBean.applied==false}"></h:inputTextarea></td>
+                            </tr>
+                            <tr>
+                                <td><h:outputText id="otProfilePhone" value="Phone" rendered="#{registerBean.applied==false}"></h:outputText></td><td><h:inputText id="itProfilePhone" value="#{registerBean.profilePhone}" rendered="#{registerBean.applied==false}" required="true"></h:inputText></td>
+                            </tr>
+                            <tr>
+                                <td><h:outputText id="otRegCode" value="Registration Code" rendered="#{registerBean.applied==false}"></h:outputText></td><td><h:inputText id="itRegCode" value="#{registerBean.regCode}" rendered="#{registerBean.applied==false}" required="true"></h:inputText></td>
+                            </tr>
+                            <tr>
+                                <td></td><td><h:commandButton id="cbApply" value="Apply" rendered="#{registerBean.applied==false}" actionListener="#{registerBean.applyForRegistration}"></h:commandButton></td>
+                            </tr>
+                        </table>
+                    </h:form>
+                </f:view>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

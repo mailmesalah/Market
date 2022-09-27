@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <body>
+
+        <ui:composition template="./admintemplate.xhtml">
+
+            <ui:define name="numberOfNotifications">
+                
+            </ui:define>
+
+            <ui:define name="content">
+                <h2>Registration Codes</h2>
+                <f:view>
+                    <h:form>
+                        <h:dataTable value="#{registrationCodeBean.registrationCodes}" var="item">
+                            <h:column>
+                                <f:facet name="header">Registration Code</f:facet>
+                                #{item.registrationCode}
+                            </h:column>
+                            <h:column>                                
+                                <h:commandButton value="Remove" actionListener="#{registrationCodeBean.removeCode(item.registrationCodeId)}"></h:commandButton>
+                                <f:facet name="footer"><h:commandButton value="Generate Code" actionListener="#{registrationCodeBean.generateNewCode}"></h:commandButton></f:facet>
+                            </h:column>
+
+                        </h:dataTable>
+                    </h:form>
+                </f:view>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
